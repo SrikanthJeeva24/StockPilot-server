@@ -14,7 +14,7 @@ export class ResponseInterceptor implements NestInterceptor {
   ): Observable<any> | Promise<Observable<any>> {
     return next.handle().pipe(
       map((data: any) => ({
-        succes: true,
+        success: true,
         data,
         timestamp: new Date().toISOString(),
       })),

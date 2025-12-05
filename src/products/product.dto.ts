@@ -24,7 +24,7 @@ export class ProductDTO {
 
   @IsOptional()
   @IsNumber()
-  categoryId?: number | string | null;
+  categoryid?: number | string | null;
 
   @IsOptional()
   @IsString()
@@ -35,6 +35,27 @@ export class ProductDTO {
 
   @IsOptional()
   updatedAt?: string;
+}
+export class CreateProductDTO {
+  @IsString()
+  name: string;
+
+  @IsString()
+  sku: string;
+
+  @IsNumber()
+  price: number;
+
+  @IsNumber()
+  stock: number;
+
+  @IsOptional()
+  @IsNumber()
+  categoryid?: number;
+
+  @IsOptional()
+  @IsString()
+  image?: string;
 }
 
 export class GetProductsQueryDTO {
@@ -52,5 +73,5 @@ export class GetProductsQueryDTO {
 
   @IsOptional()
   @Type(() => Number)
-  categoryId?: number;
+  categoryid?: number;
 }
